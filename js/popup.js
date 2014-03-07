@@ -15,10 +15,12 @@ $(document).ready(function() {
 
 function beginLocalServer() {
   var http = require('http');
-  http.createServer(function (req, res) {
-      res.writeHead(200, {'Content-Type': 'text/plain'});
-      res.end('Hello World\n');
-  }).listen(1338, '0.0.0.0');
+  var server = http.createServer();
+  server.listen(1700);
+  // http.createServer(function (req, res) {
+  //     res.writeHead(200, {'Content-Type': 'text/plain'});
+  //     res.end('Hello World\n');
+  // }).listen(1600, '0.0.0.0');
   alert("Yes");
   console.log('Server running at http://0.0.0.0:1338/');
 };
