@@ -1,0 +1,25 @@
+{
+  "name": "BrowserStateControlPlugin",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Control actions across browser tabs",
+  "content_scripts":[
+    {
+        "matches": [ "http://*/*", "https://*/*", "*://*/*" ],
+        "js": ["jquery.js", "socket.io.js", "inject.js"],
+        "run_at": "document_start"
+    }
+  ],
+  "browser_action": {
+     "default_title": "Start real time browsing"      // optional; shown in tooltip
+  },
+  "background": {
+      "scripts": ["socket.io.js", "jquery.js", "background.js"],
+      "persistent": true
+  },
+  "permissions": [
+    "tabs",
+    "<all_urls>"
+  ]
+}
+
