@@ -6,16 +6,25 @@
   "content_scripts":[
     {
         "matches": [ "http://*/*", "https://*/*", "*://*/*" ],
-        "js": ["jquery.js", "socket.io.js", "inject.js"],
+        "js": ["jquery.js", "socket.io.js", "client.js"],
         "run_at": "document_start"
     }
   ],
   "browser_action": {
+    "default_icon": {                    // optional
+      "19": "images/1.png",           // optional
+      "38": "images/1.png"            // optional
+    },
      "default_title": "Start real time browsing"      // optional; shown in tooltip
   },
   "background": {
       "scripts": ["socket.io.js", "jquery.js", "background.js"],
       "persistent": true
+  },
+  "icons": {
+    "16": "images/1.png",
+    "48": "images/1.png",
+    "128": "images/1.png"
   },
   "permissions": [
     "tabs",
